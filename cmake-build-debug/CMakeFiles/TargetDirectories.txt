@@ -1,0 +1,3 @@
+/Users/nicolasferec/Documents/projects/game-client/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/nicolasferec/Documents/projects/game-client/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/nicolasferec/Documents/projects/game-client/cmake-build-debug/CMakeFiles/game-client.dir

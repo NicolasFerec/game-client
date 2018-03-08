@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/nicolasferec/Documents/projects/game-client/src/Game.cpp
+iostream
+-
+Game.h
+/Users/nicolasferec/Documents/projects/game-client/src/Game.h
+
+/Users/nicolasferec/Documents/projects/game-client/src/Game.h
+SFML/Graphics.hpp
+-
+array
+-
+Player.h
+/Users/nicolasferec/Documents/projects/game-client/src/Player.h
+
+/Users/nicolasferec/Documents/projects/game-client/src/Player.h
+
+/Users/nicolasferec/Documents/projects/game-client/src/main.cpp
+SFML/Graphics.hpp
+-
+iostream
+-
+cmath
+-
+Game.h
+/Users/nicolasferec/Documents/projects/game-client/src/Game.h
+
