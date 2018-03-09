@@ -90,6 +90,12 @@
 		<Unit filename="/Users/nicolasferec/Documents/projects/game-client/src/Game.h">
 			<Option target="game-client"/>
 		</Unit>
+		<Unit filename="/Users/nicolasferec/Documents/projects/game-client/src/Player.cpp">
+			<Option target="game-client"/>
+		</Unit>
+		<Unit filename="/Users/nicolasferec/Documents/projects/game-client/src/Player.h">
+			<Option target="game-client"/>
+		</Unit>
 		<Unit filename="/Users/nicolasferec/Documents/projects/game-client/src/main.cpp">
 			<Option target="game-client"/>
 		</Unit>

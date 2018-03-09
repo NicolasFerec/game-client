@@ -5,6 +5,9 @@ CMakeFiles/game-client.dir/src/Game.cpp.o: ../src/Game.cpp
 CMakeFiles/game-client.dir/src/Game.cpp.o: ../src/Game.h
 CMakeFiles/game-client.dir/src/Game.cpp.o: ../src/Player.h
 
+CMakeFiles/game-client.dir/src/Player.cpp.o: ../src/Player.cpp
+CMakeFiles/game-client.dir/src/Player.cpp.o: ../src/Player.h
+
 CMakeFiles/game-client.dir/src/main.cpp.o: ../src/Game.h
 CMakeFiles/game-client.dir/src/main.cpp.o: ../src/Player.h
 CMakeFiles/game-client.dir/src/main.cpp.o: ../src/main.cpp

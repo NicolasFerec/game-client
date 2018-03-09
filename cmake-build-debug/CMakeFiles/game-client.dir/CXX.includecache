@@ -20,7 +20,13 @@ array
 Player.h
 /Users/nicolasferec/Documents/projects/game-client/src/Player.h
 
+/Users/nicolasferec/Documents/projects/game-client/src/Player.cpp
+Player.h
 /Users/nicolasferec/Documents/projects/game-client/src/Player.h
+
+/Users/nicolasferec/Documents/projects/game-client/src/Player.h
+vector
+-
 
 /Users/nicolasferec/Documents/projects/game-client/src/main.cpp
 SFML/Graphics.hpp
@@ -31,4 +37,6 @@ cmath
 -
 Game.h
 /Users/nicolasferec/Documents/projects/game-client/src/Game.h
+Player.h
+/Users/nicolasferec/Documents/projects/game-client/src/Player.h
 

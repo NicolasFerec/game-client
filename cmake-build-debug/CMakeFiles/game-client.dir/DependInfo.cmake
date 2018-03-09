@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/nicolasferec/Documents/projects/game-client/src/Game.cpp" "/Users/nicolasferec/Documents/projects/game-client/cmake-build-debug/CMakeFiles/game-client.dir/src/Game.cpp.o"
+  "/Users/nicolasferec/Documents/projects/game-client/src/Player.cpp" "/Users/nicolasferec/Documents/projects/game-client/cmake-build-debug/CMakeFiles/game-client.dir/src/Player.cpp.o"
   "/Users/nicolasferec/Documents/projects/game-client/src/main.cpp" "/Users/nicolasferec/Documents/projects/game-client/cmake-build-debug/CMakeFiles/game-client.dir/src/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "Clang")

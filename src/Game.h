@@ -13,15 +13,17 @@
 class Game {
 private:
     //sf::Window *window;
-    int map[10][10];
+    std::vector< std::vector< int > > map;
     const int tileHeight = 50;
     const int tileWidth = 50;
-    Player players[];
+
 
 public:
     Game();
 
     void loop(sf::RenderWindow& window);
+
+    std::vector< Player > players;
 };
 
 
