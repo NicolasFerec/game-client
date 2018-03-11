@@ -21,9 +21,9 @@ private:
 public:
     Game();
 
-    void loop(sf::RenderWindow& window);
+    void loop(sf::RenderWindow&, sf::Clock&);
 
-    std::vector< Player > players;
+    std::vector< Player* > players;
 };
 
 

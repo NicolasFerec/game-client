@@ -3,22 +3,34 @@
 //
 
 #include <iostream>
+#include <cmath>
+#include <sstream>
 #include "Game.h"
 
 Game::Game() : map{
-        {0, 0, 0, 0, 1, 1, 0, 0, 0, 0},
-        {0, 0, 0, 0, 1, 1, 0, 0, 0, 0},
-        {0, 0, 0, 0, 1, 1, 0, 0, 0, 0},
-        {0, 0, 0, 1, 1, 0, 0, 0, 0, 0},
-        {0, 0, 1, 1, 0, 0, 0, 0, 0, 0},
-        {0, 1, 1, 0, 0, 0, 0, 0, 0, 0},
-        {1, 1, 0, 0, 0, 0, 0, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+        {0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1},
+        {0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1},
+        {0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1},
+        {0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1},
+        {0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1},
+        {0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1},
+        {1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1},
+        {1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1},
+        {0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1},
+        {0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1},
+        {0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1},
+        {0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0}
 }{}
 
-void Game::loop(sf::RenderWindow &window) {
+void Game::loop(sf::RenderWindow &window, sf::Clock &clock) {
 
     window.clear(sf::Color::Black);
 
@@ -51,9 +63,29 @@ void Game::loop(sf::RenderWindow &window) {
     for(k = 0; k < this->players.size(); k++){
         sf::RectangleShape shape(sf::Vector2f(this->tileWidth / 2, this->tileHeight / 2));
         shape.setFillColor(sf::Color(51, 51, 51));
-        shape.setPosition(this->players[k].getX()*this->tileWidth+this->tileWidth/4, this->players[k].getY()*this->tileHeight+this->tileHeight/4);
+        shape.setPosition(this->players[k]->getX()*this->tileWidth+this->tileWidth/4, this->players[k]->getY()*this->tileHeight+this->tileHeight/4);
         window.draw(shape);
     }
+
+    sf::Time frameTime = clock.restart();
+    double framerate = 1 / (frameTime.asMilliseconds() * 0.001);
+    int roundedFramerate = (int)std::round(framerate);
+
+    sf::Font font;
+    if (!font.loadFromFile("arial.ttf"))
+    {
+        std::cout << "Error when font loading" << std::endl;
+    }
+
+    sf::Text text;
+    text.setFont(font);
+    std::ostringstream strs;
+    strs << roundedFramerate << " FPS";
+    std::string str = strs.str();
+    text.setString(str);
+    text.setCharacterSize(24);
+    text.setPosition(10, 5);
+    window.draw(text);
 
     window.display();
 }

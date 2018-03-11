@@ -9,6 +9,10 @@
 /Users/nicolasferec/Documents/projects/game-client/src/Game.cpp
 iostream
 -
+cmath
+-
+sstream
+-
 Game.h
 /Users/nicolasferec/Documents/projects/game-client/src/Game.h
 
@@ -37,6 +41,4 @@ cmath
 -
 Game.h
 /Users/nicolasferec/Documents/projects/game-client/src/Game.h
-Player.h
-/Users/nicolasferec/Documents/projects/game-client/src/Player.h
 
